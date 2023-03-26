@@ -1,6 +1,7 @@
 import './App.css';
 import React, {useState, useEffect} from 'react'
 import {getAllStudents} from "./client";
+import {Button} from 'react-bootstrap';
 
 function App() {
     const [students, setStudents] = useState([])
@@ -17,7 +18,10 @@ function App() {
     }
 
     return students.map((student, index) => {
-        return <p key={index}>{student.id} {student.name} {student.email}</p>
+        return <>
+            <Button variant="primary">Primary</Button>
+            <p key={index}>{student.id} {student.name} {student.email}</p>
+        </>
     });
 }
 
